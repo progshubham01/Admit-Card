@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				background-color: black;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			/* Add padding to containers */
+			.container {
+				padding: 16px;
+				background-color: white;
+			}
+
+			/* Full-width input fields */
+			input[type="text"],
+			input[type="password"],
+			input[type="number"],
+			input[type="date"],
+			input[type="email"] {
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				display: inline-block;
+				border: none;
+				background: #f1f1f1;
+			}
+
+			select {
+				width: 100%;
+				padding: 15px;
+				margin: 5px 0 22px 0;
+				display: inline-block;
+				border: none;
+				background: #f1f1f1;
+			}
+
+			input[type="text"]:focus,
+			input[type="password"],
+			input[type="number"],
+			input[type="date"],
+			input[type="email"]:focus {
+				background-color: #ddd;
+				outline: none;
+			}
+
+			/* Overwrite default styles of hr */
+			hr {
+				border: 1px solid #f1f1f1;
+				margin-bottom: 25px;
+			}
+
+			/* Set a style for the submit button */
+			.registerbtn {
+				background-color: #04aa6d;
+				color: white;
+				padding: 16px 20px;
+				margin: 8px 0;
+				border: none;
+				cursor: pointer;
+				width: 100%;
+				opacity: 0.9;
+			}
+
+			.registerbtn:hover {
+				opacity: 1;
+			}
+
+			/* Add a blue text color to links */
+			a {
+				color: dodgerblue;
+			}
+
+			/* Set a grey background color and center the text of the "sign in" section */
+			.signin {
+				background-color: #f1f1f1;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>Registeration Form</h1>
+			<hr />
+
+			<label for="level">Choose a level:</label>
+
+			<select name="level" id="cars">
+				<% if(data.level == 1){%>
+				<option value="1">Level 1 - Class 6- Class 8</option>
+				<%}%> <% if(data.level == 2){%>
+				<option value="2">Level 2 - Class 9 - Class 10</option>
+				<%}%> <% if(data.level == 2){%>
+				<option value="3">Level 3 - Class 11 - Class 12</option>
+				<%}%>
+			</select>
+
+			<label for="name"><b>Applicant's Name</b></label>
+			<input
+				type="text"
+				value="<%=data.name%>"
+				placeholder="Enter Name"
+				name="name"
+				id="name"
+				required
+			/>
+
+			<label for="father_name"><b>Father's Name</b></label>
+			<input
+				type="text"
+				value="<%=data.father_name%>"
+				placeholder="Enter Father's Name"
+				name="father_name"
+				id="father_name"
+				required
+			/>
+
+			<label for="mother_name"><b>Mother's Name</b></label>
+			<input
+				type="text"
+				value="<%=data.mother_name%>"
+				placeholder="Enter Mother's Name"
+				name="mother_name"
+				id="mother_name"
+				required
+			/>
+
+			<label for="date"><b>Date Of Birth</b></label>
+			<input
+				type="date"
+				value="<%=data.date_of_birth%>"
+				name="date_of_birth"
+				id="date_of_birth"
+				required
+			/>
+
+			<label for="sex">Sex:</label>
+			<select name="sex" id="sex">
+				<%if(data.sex == 1){%>
+				<option value="1">Male</option>
+				<%}%> <%if(data.sex == 2){%>
+				<option value="2">Female</option>
+				<%}%> <%if(data.sex == 3){%>
+				<option value="3">Third Gender</option>
+				<%}%>
+			</select>
+
+			<label for="mobile"><b>Mobile Number</b></label>
+			<input type="number" value="<%=data.mobile%>" name="mobile" id="mobile" required />
+
+			<label for="email"><b>Email</b></label>
+			<input type="email" name="email" id="email" value="<%=data.email%>" required />
+
+			<label for="nation">Nationality:</label>
+			<select name="nation" id="nation">
+				<%if(data.nation == 1){%>
+				<option value="1">Indian</option>
+				<%}%> <%if(data.nation == 2){%>
+				<option value="1">Forigner</option>
+				<%}%> <%if(data.nation == 3){%>
+				<option value="1">NRI</option>
+				<%}%>
+			</select>
+
+			<label for="address"><b>Correspondance Address</b></label>
+			<input type="text" value="<%=data.address%>" name="address" id="address" required />
+
+			<label for="pincode"><b>Pincode</b></label>
+			<input type="number" value="<%=data.pincode%>" name="pincode" id="pincode" required />
+
+			<label for="class"><b>Class/ Degree</b></label>
+			<input type="text" value="<%=data.class%>" name="class_n" id="class_n" required />
+
+			<label for="school"><b>Name of School</b></label>
+			<input type="text" name="school" value="<%=data.school%>" id="school" required />
+
+			<label for="state"><b>State</b></label>
+			<input type="text" name="state" value="Bihar" id="state" required />
+
+
+			<label for="district"><b>District</b></label>
+			<input type="text" name="district" value="<%=data.district%>" id="district" required />
+
+			<label for="signature"><b>Upload Signature</b></label>
+			<!-- <input type="file" name="signature" accept="image/*"> -->
+			<img
+				id="output1"
+				height="100px"
+				width="100px"
+				src="http://registration.dstreg.codebuckets.in/<%=data.signature%>"
+			/>
+			<br />
+
+			<label for="photo"><b>Upload Photograph</b></label>
+			<!-- <input type="file" name = "photo" accept="image/*"> -->
+			<img
+				id="output2"
+				height="100px"
+				width="100px"
+				src="http://registration.dstreg.codebuckets.in/<%=data.photo%>"
+			/>
+
+			<hr />
+		</div>
+	</body>
+</html>

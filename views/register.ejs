@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<style>
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			background-color: black;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+
+		 /* .hdrimg {
+			margin-left: 408px;
+		}
+		
+		.heading {
+				margin-left: 514px;
+				 color: white; 
+			} 
+
+			.subhead {
+				margin-left: 243px;
+			} */
+
+		/* Add padding to containers */
+		.container {
+			padding-left: 110px;
+			padding-right: 110px;
+			/* padding: 16px; */
+			background-color: white;
+		}
+
+
+		/* Full-width input fields */
+		input[type="text"],
+		input[type="password"],
+		input[type="number"],
+		input[type="date"],
+		input[type="email"] {
+			width: 100%;
+			padding: 15px;
+			margin: 5px 0 22px 0;
+			display: inline-block;
+			border: none;
+			background: #f1f1f1;
+		}
+
+		select {
+			width: 100%;
+			padding: 15px;
+			margin: 5px 0 22px 0;
+			display: inline-block;
+			border: none;
+			background: #f1f1f1;
+		}
+
+		input[type="text"]:focus,
+		input[type="password"],
+		input[type="number"],
+		input[type="date"],
+		input[type="email"]:focus {
+			background-color: #ddd;
+			outline: none;
+		}
+
+		/* Overwrite default styles of hr */
+		hr {
+			border: 1px solid #f1f1f1;
+			margin-bottom: 25px;
+		}
+
+		/* Set a style for the submit button */
+		.registerbtn {
+			font-size: 15px;
+			/* background-color: #04aa6d; */
+			background-color: lightgreen;
+           color: #003266;
+			/* color: white; */
+			padding: 16px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 10%;
+			opacity: 0.9;
+			margin-left: 603px;
+			font-weight: 900;
+		}
+
+		.registerbtn:hover {
+			opacity: 1;
+		}
+
+		/* Add a blue text color to links */
+		a {
+			color: dodgerblue;
+		}
+
+		/* Set a grey background color and center the text of the "sign in" section */
+		.signin {
+			background-color: #f1f1f1;
+			text-align: center;
+		}
+		.subhead{
+			background-color: lightgreen;
+    /* background-color: linear-gradient( to right, rgb(31,183, 22), rgb(90, 183, 128) ); */
+    box-shadow: 12px 12px 16px rgb(255 209 5);
+    color: #003266;
+		}
+		
+		@media only screen and (max-width: 700px) {
+			.container {
+				width: 285%;
+			}
+.registerbtn{
+	width: 25%;
+	margin-left: 275px;
+}
+			.imgtag {
+				margin-left: 140px;
+			}
+
+			.heading {
+				margin-left: 280px;
+			}
+			/* .hdrimg {
+				margin-left: 140px;
+			}
+
+			.heading {
+				margin-left: -81px;
+				color: white;
+			}
+
+			.subheadtext {
+				margin-left: 38px;
+			} */
+		}
+	</style>
+</head>
+
+<body>
+	<form method="post" action="/" enctype="multipart/form-data">
+		<div class="container">
+			<div class="header">
+				<img class="imgtag" src="/images/header.jpg" /><br />
+				<!-- <h1 class="heading" style="margin-left: 514px;">Mathematics Day 2021</h1>
+				<h1 class="subhead" style="margin-left: 243px;">Srinivasa Ramanujan Talent Search Test in Mathematics 2021</h1> -->
+				<br>
+			</div>
+			<div class="subhead">
+				<h1 class="heading" style="margin-left: 514px;">National Mathematics Day 2021</h1>
+				<h1 class="subheadtext" style="margin-left: 243px;">Srinivasa Ramanujan Talent Search Test in Mathematics 2021</h1>
+			</div>
+		<br>
+			<!-- <h1>Srinivasa Ramanujan Talent Search Test in Mathematics 2021</h1> -->
+
+			<!-- <hr /> -->
+			<p style="color: red;">Please fill in this form to create an account.</p>
+			<label for="level"><b>Choose a level:</b><span style="color:#ff0000">*</span></label>
+
+			<select name="level" id="level">
+				<option value="1">Level 1 - Class 6- Class 8</option>
+				<option value="2">Level 2 - Class 9 - Class 10</option>
+				<option value="3">Level 3 - Class 11 - Class 12</option>
+			</select>
+
+			<label for="name"><b>Applicant's Name</b><span style="color:#ff0000">*</span></label>
+			<input type="text" placeholder="Enter Name" name="name" id="name"
+				onkeypress="return /[a-z ]/i.test(event.key)" required />
+
+			<label for="father_name"><b>Father's Name</b><span style="color:#ff0000">*</span></label>
+			<input type="text" placeholder="Enter Father's Name" name="father_name" id="father_name"
+				onkeypress="return /[a-z ]/i.test(event.key)" required />
+
+			<label for="mother_name"><b>Mother's Name</b><span style="color:#ff0000">*</span></label>
+			<input type="text" placeholder="Enter Mother's Name" name="mother_name" id="mother_name"
+				onkeypress="return /[a-z ]/i.test(event.key)" required />
+
+			<label for="date"><b>Date Of Birth</b><span style="color:#ff0000">*</span></label>
+			<input type="date" name="date_of_birth" id="date_of_birth" required />
+
+			<label for="sex"><b>Sex:</b><span style="color:#ff0000">*</span></label>
+			<select name="sex" id="sex">
+				<option value="1">Male</option>
+				<option value="2">Female</option>
+				<option value="3">Third Gender</option>
+			</select>
+
+			<label for="mobile"><b>Mobile Number</b><span style="color:#ff0000">*</span></label>
+			<input type="number" name="mobile" id="mobile" onkeypress="return /[0-9]/i.test(event.key)" maxlength="10"
+				oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+				required />
+
+			<label for="email"><b>Email</b><span style="color:#ff0000">*</span></label>
+			<input type="email" name="email" id="email" required />
+
+			<label for="nation"><b>Nationality:</b><span style="color:#ff0000">*</span></label>
+			<select name="nation" id="nation">
+				<option value="1">Indian</option>
+				<option value="2">Foreigner</option>
+				<option value="3">NRI</option>
+			</select>
+
+			<label for="cor_address"><b>Correspondance Address</b><span style="color:#ff0000">*</span></label>
+			<input type="text" name="address" id="cor_address" required />
+
+			<label for="pincode"><b>Pincode</b><span style="color:#ff0000">*</span></label>
+			<input type="number" name="pincode" id="pincode" onkeypress="return /[0-9]/i.test(event.key)"
+				oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+				maxlength="6" required />
+
+			<label for="class"><b>Class/ Degree</b><span style="color:#ff0000">*</span></label>
+			<input type="text" name="class_n" id="class_n" required onchange="checkClass(this.value)" />
+
+			<label for="school"><b>Name of School</b><span style="color:#ff0000">*</span></label>
+			<input type="text" name="school" id="school" required />
+
+			<label for="state"><b>State</b><span style="color:#ff0000">*</span></label>
+			<select id="state" onchange="selctdistrict(this.value)">
+				<option value="Select State">Select State</option>
+				<option value="Bihar">Bihar</option>
+			</select>
+
+			<label for="district"><b>District</b><span style="color:#ff0000">*</span></label>
+			<select id='district' name='district'></select>
+			<!-- <select name="district" id="district">
+					<option value="Araria">Araria</option>
+					<option value="Arwal">Arwal</option>
+					<option value="Aurangabad">Aurangabad</option>
+					<option value="Banka">Banka</option>
+					<option value="Begusarai">Begusarai</option>
+					<option value="Bhagalpur">Bhagalpur</option>
+					<option value="Bhojpur">Bhojpur</option>
+					<option value="Buxar">Buxar</option>
+					<option value="Darbhanga">Darbhanga</option>
+					<option value="East Champaran">East Champaran</option>
+					<option value="Gaya">Gaya</option>
+					<option value="Gopalganj">Gopalganj</option>
+					<option value="Jamui">Jamui</option>
+					<option value="Jehanabad">Jehanabad</option>
+					<option value="Kaimur">Kaimur</option>
+					<option value="Katihar">Katihar</option>
+					<option value="Khagaria">Khagaria</option>
+					<option value="Kishanganj">Kishanganj</option>
+					<option value="Lakhisarai">Lakhisarai</option>
+					<option value="Madhepura">Madhepura</option>
+					<option value="Madhubani">Madhubani</option>
+					<option value="Munger">Munger</option>
+					<option value="Muzaffarpur">Muzaffarpur</option>
+					<option value="Nalanda">Nalanda</option>
+					<option value="Nawada">Nawada</option>
+					<option value="Patna">Patna</option>
+					<option value="Purnia">Purnia</option>
+					<option value="Rohtas">Rohtas</option>
+					<option value="Saharsa">Saharsa</option>
+					<option value="Samastipur">Samastipur</option>
+					<option value="Saran">Saran</option>
+					<option value="Sheikhpura">Sheikhpura</option>
+					<option value="Sheohar">Sheohar</option>
+					<option value="Sitamarhi">Sitamarhi</option>
+					<option value="Siwan">Siwan</option>
+					<option value="Supaul">Supaul</option>
+					<option value="Vaishali">Vaishali</option>
+					<option value="West Champaran">West Champaran</option>
+				</select> -->
+			<label for="signature"><b>Upload Signature</b><span style="color:#ff0000">*</span></label>
+			<input type="file" name="signature" accept="image/*" onchange="loadFile1(event)" />
+			<img id="output1" style="margin-left: 14px;" height="100px" width="100px" src="/images/NoImage.png" />
+      <p style="color: red;">Acceptable Sign Size: 20KB - 50KB</p>
+			<br />
+
+			<label for="photo"><b>Upload Photograph</b><span style="color:#ff0000">*</span></label>
+			<input type="file" name="photo" accept="image/*" onchange="loadFile2(event)" />
+			<img id="output2" height="100px" width="100px" src="/images/NoImage.png" />
+      <p style="color: red;">Acceptable Photo Size: 20KB - 50KB</p>
+
+			<hr />
+
+			<label>
+				<input type="checkbox" id="en" required /><span style="color:#ff0000">*</span>&nbsp;&nbsp;I do hereby
+				declare that I have given all the information correct and accurate and If any information or any
+				documents submitted by me is found incorrect or false at any stage, I am liable for the cancellation of
+				my application form and my eligibility without any prior notice.
+			</label>
+<br>
+			<button type="submit" class="registerbtn">Register</button>
+		</div>
+	</form>
+</body>
+
+<script>
+	var loadFile1 = function (event) {
+		var output1 = document.getElementById("output1");
+		output1.src = URL.createObjectURL(event.target.files[0]);
+		output1.onload = function () {
+			URL.revokeObjectURL(output1.src); // free memory
+		};
+	};
+	var loadFile2 = function (event) {
+		var output2 = document.getElementById("output2");
+		output2.src = URL.createObjectURL(event.target.files[0]);
+		output2.onload = function () {
+			URL.revokeObjectURL(output2.src); // free memory
+		};
+	};
+	var checkClass = function (val) {
+		debugger;
+		var level = document.getElementById("level").value;
+		if (level == '1') {
+			var value = (val >= 6 && val <= 8);
+			if (value == false) {
+				alert("Class Number Should be Betwwwn 6 to 8");
+				document.getElementById("class_n").value = "";
+			}
+		} else if (level == '2') {
+			var value = (val >= 9 && val <= 10);
+			if (value == false) {
+				alert("Class Number Should be Betwwwn 9 to 10");
+				document.getElementById("class_n").value = "";
+			}
+		} else {
+			var value = (val >= 11 && val <= 12);
+			if (value == false) {
+				alert("Class Number Should be Betwwwn 11 to 12");
+				document.getElementById("class_n").value = "";
+			}
+		}
+	};
+
+	var selctdistrict = function ($val) {
+		if ($val == 'Select State') {
+			var options = '';
+			document.getElementById("district").innerHTML = options;
+		}
+		if ($val == 'Bihar') {
+			var bihar = ["Araria", "Arwal", "Aurangabad", "Banka", "Begusarai", "Bhagalpur", "Bhojpur", "Buxar",
+				"Darbhanga", "East", "Champaran", "Gaya", "Gopalganj", "Jamui", "Jehanabad", "Kaimur",
+				"Katihar", "Khagaria", "Kishanganj", "Lakhisarai", "Madhepura", "Madhubani", "Munger",
+				"Muzaffarpur", "Nalanda", "Nawada", "Patna", "Purnia", "Rohtas", "Saharsa", "Samastipur", "Saran",
+				"Sheikhpura", "Sheohar", "Sitamarhi", "Siwan", "Supaul", "Vaishali", "West Champaran"
+			];
+			var options = '';
+			for (var i = 0; i < bihar.length; i++) {
+				options += '<option value="' + bihar[i] + '">' + bihar[i] + '</option>';
+			}
+			document.getElementById("district").innerHTML = options;
+		}
+	}
+</script>
+
+</html>
