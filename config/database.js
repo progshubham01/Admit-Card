@@ -6,7 +6,7 @@ var pool = mysql.createPool({multipleStatements: true,
   host: 'localhost',
   user: 'root',
   password: '',
-  database: 'test_new',
+  database: 'exam',
   charset: 'UTF8MB4_GENERAL_CI'
 });
 
